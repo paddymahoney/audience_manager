@@ -1,6 +1,7 @@
 require "audience_manager/version"
 require "audience_manager/api/configuration"
 require "audience_manager/api/client"
+require "audience_manager/trait"
 
 module AudienceManager
   class << self
