@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = AudienceManager::VERSION
   spec.authors       = ["Reginaldo Sousa"]
   spec.email         = ["reginaldo.rms@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
+  spec.description   = %q{Ruby client to Adobe Audience Management}
   spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/reginaldosousa/audience_manager"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
