@@ -1,14 +1,6 @@
 require 'spec_helper'
 
 describe AudienceManager::API::Client do
-  before(:all) do
-    AudienceManager.configure do |config|
-      config.client_id     = ENV['AAM_CLIENT_ID']
-      config.client_secret = ENV['AAM_CLIENT_SECRET']
-      config.user          = ENV['AAM_USER']
-      config.password      = ENV['AAM_PASSWORD']
-    end
-  end
   
   let(:client) { AudienceManager::API::Client.new }
 

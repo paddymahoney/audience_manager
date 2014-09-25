@@ -10,6 +10,7 @@ module AudienceManager
       def get(path)
         token.get(path)
       end  
+
       private
 
       def client
