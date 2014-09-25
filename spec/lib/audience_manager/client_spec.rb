@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AudienceManager::Client do
+describe AudienceManager::API::Client do
   before(:all) do
     AudienceManager.configure do |config|
       config.client_id     = ENV['AAM_CLIENT_ID']
@@ -10,12 +10,12 @@ describe AudienceManager::Client do
     end
   end
   
-  let(:client) { AudienceManager::Client.new }
+  let(:client) { AudienceManager::API::Client.new }
 
   describe '.get(path)' do
     context 'successfull response' do
       let(:response) { 
-        VCR.use_cassette('AAM/client/get') do
+        VCR.use_cassette('AAM/api/client/get') do
            client.get('/v1/traits') 
         end
       }

@@ -1,6 +1,6 @@
 require "audience_manager/version"
-require "audience_manager/configuration"
-require "audience_manager/client"
+require "audience_manager/api/configuration"
+require "audience_manager/api/client"
 
 module AudienceManager
   class << self
@@ -8,7 +8,7 @@ module AudienceManager
   end
 
   def self.configuration
-    @configuration ||= Configuration.new
+    @configuration ||= self::API::Configuration.new
   end
 
   def self.configure
