@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Reginaldo Sousa']
   spec.email         = ['reginaldo.rms@gmail.com']
   spec.description   = 'Ruby client to Adobe Audience Management'
-  spec.summary       = 'TODO: Write a gem summary'
+  spec.summary       = 'Ruby client to Adobe Audience Management'
   spec.homepage      = 'https://github.com/reginaldosousa/audience_manager'
   spec.license       = 'MIT'
 
