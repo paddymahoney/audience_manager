@@ -27,4 +27,35 @@ describe AudienceManager::Trait do
       end
     end
   end
+  
+  describe '.find(sid)' do
+    context 'when found it' do
+      let(:trait) { 
+        VCR.use_cassette('AAM/trait/find.357590') do
+          AudienceManager::Trait.find(357590)
+        end
+      }
+      
+      it 'return a trait' do
+        expect(trait).to be_a(AudienceManager::Trait)
+      end
+
+      it "fill trait attributes" do
+        requested_attributes = {
+          :sid=>357590, 
+          :trait_type=>nil, 
+          :name=>"Video Type-fullepisode", 
+          :description=>"Video Type-fullepisode", 
+          :status=>nil, 
+          :data_source_id=>nil, 
+          :folder_id=>nil
+        }
+
+        [:sid, :trait_type, :name, :description, :status, :data_source_id, :folder_id].each do |attribute|
+          expect(trait.public_send(attribute)).to eq(requested_attributes[attribute])
+        end
+      end
+    end
+  end
+  
 end

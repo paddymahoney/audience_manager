@@ -14,7 +14,7 @@ module AudienceManager
       private
 
       def client
-        @token ||= OAuth2::Client.new(
+        @client ||= OAuth2::Client.new(
           @config.client_id,
           @config.client_secret,
           :site => 'https://api.demdex.com'
@@ -22,7 +22,17 @@ module AudienceManager
       end
   
       def token
-        @token ||= client.password.get_token(@config.user, @config.password)
+        return new_token if !@token
+        refresh_token if @token.expired?
+        @token
+      end
+      
+      def new_token
+        @token = client.password.get_token(@config.user, @config.password)
+      end
+      
+      def refresh_token
+        @token.refresh!
       end
     end
   end
