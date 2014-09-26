@@ -8,6 +8,8 @@ end
 require 'audience_manager'
 require 'vcr'
 require 'dotenv'
+require 'coveralls'
+Coveralls.wear!
 
 Dotenv.load
 
