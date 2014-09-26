@@ -5,12 +5,13 @@ if ENV['COVERAGE']
   SimpleCov.start
 end
 
-require 'audience_manager'
 require 'vcr'
 require 'dotenv'
 require 'coveralls'
-Coveralls.wear!
+require 'audience_manager'
 
+# Load plugins
+Coveralls.wear!
 Dotenv.load
 
 VCR.configure do |c|
