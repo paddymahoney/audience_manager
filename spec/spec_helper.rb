@@ -1,6 +1,14 @@
+if ENV['COVERAGE']
+  require 'simplecov'
+  require 'simplecov-rcov'
+  SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
+  SimpleCov.start
+end
+
 require 'audience_manager'
 require 'vcr'
 require 'dotenv'
+
 Dotenv.load
 
 VCR.configure do |c|
