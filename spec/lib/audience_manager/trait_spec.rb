@@ -44,13 +44,14 @@ describe AudienceManager::Trait do
 
       it 'fill trait attributes' do
         requested_attributes = {
-          sid: 357_590,
-          trait_type: nil,
-          name: 'Video Type-fullepisode',
-          description: 'Video Type-fullepisode',
-          status: nil,
-          data_source_id: nil,
-          folder_id: nil
+          sid: 357590,
+          trait_type: "RULE_BASED_TRAIT",
+          name: "Video Type-fullepisode",
+          description: "Video Type-fullepisode",
+          create_time: 1363273758000,
+          update_time: 1363273758000,
+          folder_id: 19369,
+          data_source_id: 571
         }
 
         attributes = [:sid, :trait_type, :name, :description,
